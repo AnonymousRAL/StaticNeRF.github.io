@@ -1,0 +1,28 @@
+# - name: People
+#   link: /people/people
+
+- name: People
+  dropdown:
+    - name: Current Members
+      link: /people/current-members
+    - name: Alumni
+      link: /people/alumni
+      
+- name: Research
+  link: /research/
+
+# - name: Publication
+#   link: /publications/
+
+- name: Publication
+  dropdown:
+    - name: International
+      link: /pulication/international
+    - name: Domestic
+      link: /pulication/domestic
+
+- name: News
+  link: /news/news
+
+- name: Album
+  link: /album/album

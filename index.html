@@ -59,10 +59,14 @@
     </div> -->
 
     <div class="links">
-        <a class="button" href="https://arxiv.org/pdf/2407.08447"><i class="ti ti-file-type-pdf"></i> Paper</a>
+        <!-- <a class="button" href="https://arxiv.org/pdf/2407.08447"><i class="ti ti-file-type-pdf"></i> Paper</a>
         <a class="button" href="https://github.com/jkulhanek/wild-gaussians/"><i class="ti ti-brand-github-filled"></i> Code</a>
         <a class="button" href="https://youtu.be/Ri-er40QUoU"><i class="ti ti-slideshow"></i> Video</a>
-        <a class="button" href="https://arxiv.org/pdf/2407.08447"><i class="ti ti-file-type-pdf"></i> Supplementary Materials</a>
+        <a class="button" href="https://arxiv.org/pdf/2407.08447"><i class="ti ti-file-type-pdf"></i> Supplementary Materials</a> -->
+        <a class="button" href=""><i class="ti ti-file-type-pdf"></i>Paper</a>
+        <a class="button" href=""><i class="ti ti-brand-github-filled"></i>Code</a>
+        <a class="button" href="./assets/video/StaticNeRF.mp4"><i class="ti ti-slideshow"></i>Video</a>
+        <a class="button" href="./assets/supp/StaticNeRF_Supplementary_Material.pdf" target="_blank"><i class="ti ti-file-type-pdf"></i>Supplementary Material</a>
       </div>
       <style>
         .video.teaser-video::before {
@@ -202,14 +206,12 @@
 
     <section class="abstract">
       <h2>Abstract</h2>
-      <p>Recent advances in neural representations have gained considerable attention as a promising avenue for generating high-fidelity dense maps in robotics applications. Although existing mapping methods perform well in stable and static environments, they face significant challenges when dynamic objects are present. To address this, recent studies have examined reconstructing static scenes in dynamic environments primarily from a rendering perspective. However, these methods typically assume that dynamic objects move substantially more than the camera, which constrains their applicability in real-world mapping scenarios. Given these challenges, we propose a novel static neural mapping methodology for robust deployment in practical environments. Our approach integrates a dynamic object detection module during robotic navigation, forming a mapping system that is experimentally validated via multiple localization methods. Experiments on standard and custom datasets show that our implicit neural map outperforms existing static neural rendering approaches. Notably, dynamic object detection and removal significantly improve localization accuracy, marking a key advance in robust robot navigation.
+      <p>Recent advances in neural representations have shown great promise for enabling high-fidelity dense mapping in robotics. Given the inherently dynamic nature of real-world environments, many studies have focused on learning static scene representations from dynamic observations. However, existing methods often fail to remove subtly moving objects and struggle to recover occluded static backgrounds, leading to critical limitations in practice. Furthermore, when static neural maps are used for localization, dynamic content in query images must be handled effectively. To overcome these challenges, we propose a static neural mapping framework that is robust to diverse dynamic environments and capable of processing dynamic content during localization. We evaluate our approach through extensive experiments on both public and in-house datasets. 
+        Our method improves both dynamic object removal and localization robustness under dynamic conditions, representing a significant step toward resilient robot navigation in real-world environments.
 <figure style="margin: 0">
-      <img src="./main.svg" alt="WildGaussians overview" style="width: 100%; margin: 1em auto 0.3em auto; display: block;" />
+      <img src="./assets/main_fig.jpg" alt="WildGaussians overview" style="width: 100%; margin: 1em auto 0.3em auto; display: block;" />
       <figcaption>
-        Overview of our proposed static neural rendering pipeline. Our framework follows a curriculum learning strategy with three functional stages: 
-      (1) <strong>Initial Training</strong> learns coarse geometric and photometric representations using NeRF with uniform sampling. 
-      (2) <strong>Uncertainty Compensation</strong> introduces CNN-based uncertainty network to compensate for ambiguity that NeRF alone cannot resolve, enabling better disentanglement of static and transient fields through joint optimization. 
-      (3) <strong>High-fidelity Rendering</strong> adopts a data-driven sampling strategy and focuses on rendering quality with fine-grained uncertainty.
+      <Strong>Overview of our proposed static neural rendering pipeline.</Strong> The top row illustrates stage-wise scene evolution during training, and the bottom row presents the corresponding method components aligned with each stage. Our framework follows a curriculum learning strategy consisting of three functional stages: (1) <strong>Initial Training</strong> involves learning coarse geometric and photometric representations through uniform sampling. (2) <strong>Uncertainty Compensation</strong> incorporates a CNN-based uncertainty network to address ambiguities that NeRF alone cannot resolve, enabling better disentanglement of static and transient fields through joint optimization. (3) <strong>High-fidelity Rendering</strong> adopts a data-driven sampling strategy and focuses on high-quality rendering. 
       </figcaption>
     </figure>
     </section>
